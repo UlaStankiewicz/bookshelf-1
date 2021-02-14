@@ -1,0 +1,38 @@
+### Get all books
+GET http://localhost:8080/books?page=0&size=20
+
+
+### Create book
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "title",
+  "author": "String",
+  "isbn": "String",
+  "numberOfPages": 123,
+  "rating": 5
+}
+
+### Update book
+PUT http://localhost:8080/books/767a9c3a-a529-489a-b52d-8b4a3dbacb22
+Content-Type: application/json
+
+{
+  "title": "Update title",
+  "author": "New author",
+  "isbn": "11111111",
+  "numberOfPages": 1234,
+  "rating": 2
+}
+
+### Delete book
+DELETE http://localhost:8080/books/31cc2326-259d-4403-bd15-7546d97eb3e6
+
+### Create comment
+POST http://localhost:8080/books/31cc2326-259d-4403-bd15-7546d97eb3e6/comments
+Content-Type: application/json
+
+{
+  "text": "Text comment"
+}
