@@ -60,3 +60,9 @@ Delete book with given uuid. Always responds with `200`.
 1. I didn't wrote real integration test
 1. I haven't wrote logic for isbn
 1. I haven't prepared building docker image to docker compose using `./gradlew bootBuildImage`
+
+---
+
+# Edit 15-02-2021
+Biggest problem is that I wrote it in one afternoon/evening/night. Solution for problem with serilization I found 10 minutes after pushing repo under shower. I should create dto object for comment, because normally it needs post in constructor, so it gave error in for `exchangeEntity`. I spend a lot of time(1 hour) on fixing that test. 
+Also in the morning during walk with dog I started to think on query, it wouldn't be so difficult, just take all posts id on given page, prepare query in postgres as it is described [here](https://stackoverflow.com/a/7630564) `select DISTINCT ON(1) post_id, text_ created_date from posts where post_id in[:posts_ids] order by 3 desc`
